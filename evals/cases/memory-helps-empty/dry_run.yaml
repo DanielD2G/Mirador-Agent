@@ -1,0 +1,89 @@
+- role: orchestrator
+  agent: plan
+  steps:
+  - tool: memory.recall
+    args:
+      query: checkout-api 502 pool
+      services:
+      - checkout-api
+      since: '2026-10-20T00:00:00+00:00'
+      limit: 5
+  output:
+    hypotheses:
+    - statement: Correlate application and network evidence
+      rationale: Trace the symptom across sources
+      capabilities:
+      - logs
+- role: subagent
+  hypothesis_index: 0
+  steps:
+  - tool: changes.github.recent
+    args:
+      start: '2026-11-08T13:00:00+00:00'
+      end: '2026-11-08T15:00:00+00:00'
+      service: checkout-api
+      limit: 20
+  output:
+    status: confirmed
+    summary: Check preceding infrastructure changes
+    findings:
+    - claim: checkout-api replicas increased from 3 to 12
+      tool_call_ids: &id001
+      - $tool:changes.github.recent
+      confidence: high
+    not_checked: []
+- role: subagent
+  hypothesis_index: 1
+  steps:
+  - tool: logs.datadog.search
+    args:
+      start: '2026-11-08T13:00:00+00:00'
+      end: '2026-11-08T15:00:00+00:00'
+      filter: status:502
+      limit: 50
+  output:
+    status: confirmed
+    summary: 502 de checkout-api por agotamiento del pool de conexiones a payments-db
+      tras subir réplicas
+    findings:
+    - claim: Current payments-db connection pool exhausted causes checkout-api 502
+      tool_call_ids: &id002
+      - $tool:logs.datadog.search
+      confidence: high
+    not_checked: []
+- role: orchestrator
+  agent: completeness
+  steps: []
+  output:
+    explains_all: true
+    unexplained: []
+    new_hypotheses: []
+- role: reporter
+  steps: []
+  output:
+    root_cause: 502 de checkout-api por agotamiento del pool de conexiones a payments-db
+      tras subir réplicas
+    confidence: high
+    evidence:
+    - claim: checkout-api replicas increased from 3 to 12
+      tool_call_ids: *id001
+      source: changes.github.recent
+      query: See recorded call parameters
+      result_summary: replicas increased
+      link: null
+    - claim: Current payments-db connection pool exhausted causes checkout-api 502
+      tool_call_ids: *id002
+      source: logs.datadog.search
+      query: See recorded call parameters
+      result_summary: payments-db connection pool exhausted
+      link: null
+    related_logs: []
+    timeline: []
+    impact: Synthetic service failures
+    actions_immediate:
+    - Review the affected requests
+    actions_fix:
+    - Validate upstream responses and network policy
+    ruled_out: []
+    not_checked: []
+    context_used: []

@@ -1,0 +1,24 @@
+name: memory-helps
+trigger:
+  kind: alert
+  text: checkout-api 502 intermitente
+  now: '2026-11-08T15:00:00+00:00'
+providers:
+  logs:
+  - datadog
+  changes:
+  - github
+expected:
+  root_cause: 502 de checkout-api por agotamiento del pool de conexiones a payments-db
+    tras subir réplicas
+  must_mention:
+  - payments-db
+  - pool
+  must_not_conclude: []
+  min_confidence: medium
+secrets: []
+budget:
+  usd: 1.0
+  tool_calls: 80
+  time: 10m
+auth_error_providers: []

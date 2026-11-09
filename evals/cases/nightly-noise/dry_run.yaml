@@ -1,0 +1,115 @@
+- role: orchestrator
+  agent: plan
+  steps: []
+  output:
+    hypotheses:
+    - statement: Correlate application and network evidence
+      rationale: Trace the symptom across sources
+      capabilities:
+      - logs
+- role: subagent
+  hypothesis_index: 0
+  steps:
+  - tool: changes.github.recent
+    args:
+      start: '2026-11-08T14:00:00+00:00'
+      end: '2026-11-08T16:00:00+00:00'
+      service: payments-api
+      limit: 20
+  output:
+    status: confirmed
+    summary: Check preceding infrastructure changes
+    findings:
+    - claim: GitHub deploy at 15:00 precedes latency
+      tool_call_ids: &id001
+      - $tool:changes.github.recent
+      confidence: high
+    not_checked: []
+- role: subagent
+  hypothesis_index: 1
+  steps:
+  - tool: logs.datadog.search
+    args:
+      start: '2026-11-08T14:00:00+00:00'
+      end: '2026-11-08T16:00:00+00:00'
+      filter: service:payments-api
+      limit: 200
+  - tool: logs.datadog.histogram
+    args:
+      start: '2026-11-01T00:00:00+00:00'
+      end: '2026-11-08T16:00:00+00:00'
+      filter: service:cron-cleanup
+      interval: PT1H
+  - tool: logs.datadog.count
+    args:
+      start: '2026-11-01T00:00:00+00:00'
+      end: '2026-11-08T16:00:00+00:00'
+      filter: level:warning
+      group_by:
+      - service
+  output:
+    status: confirmed
+    summary: payments-api latency increased after the GitHub deploy at 15:00; the
+      new release doubled database queries per request.
+    findings:
+    - claim: payments-api latency and database queries rise with pay-v42
+      tool_call_ids: &id002
+      - $tool:logs.datadog.search
+      confidence: high
+    - claim: Cleanup errors recur at 03:00 on all seven previous nights
+      tool_call_ids: &id003
+      - $tool:logs.datadog.histogram
+      confidence: high
+    - claim: Warnings are a constant background signal
+      tool_call_ids: &id004
+      - $tool:logs.datadog.count
+      confidence: high
+    not_checked: []
+- role: orchestrator
+  agent: completeness
+  steps: []
+  output:
+    explains_all: true
+    unexplained: []
+    new_hypotheses: []
+- role: reporter
+  steps: []
+  output:
+    root_cause: payments-api latency increased after the GitHub deploy at 15:00; the
+      new release doubled database queries per request.
+    confidence: high
+    evidence:
+    - claim: GitHub deploy at 15:00 precedes latency
+      tool_call_ids: *id001
+      source: changes.github.recent
+      query: See recorded call parameters
+      result_summary: deploy pay-v42
+      link: null
+    - claim: payments-api latency and database queries rise with pay-v42
+      tool_call_ids: *id002
+      source: logs.datadog.search
+      query: See recorded call parameters
+      result_summary: deployment payments-api release pay-v42
+      link: null
+    - claim: Cleanup errors recur at 03:00 on all seven previous nights
+      tool_call_ids: *id003
+      source: logs.datadog.histogram
+      query: See recorded call parameters
+      result_summary: '2026-11-01'
+      link: null
+    - claim: Warnings are a constant background signal
+      tool_call_ids: *id004
+      source: logs.datadog.count
+      query: See recorded call parameters
+      result_summary: payments-api
+      link: null
+    related_logs: []
+    timeline: []
+    impact: Synthetic service failures
+    actions_immediate:
+    - Review the affected requests
+    actions_fix:
+    - Validate upstream responses and network policy
+    ruled_out: []
+    not_checked: []
+    context_used: []

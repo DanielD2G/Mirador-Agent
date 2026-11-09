@@ -1,0 +1,297 @@
+sampled_requests:
+- ts: '2026-11-08T14:20:00+00:00'
+  request_id: probe-00
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_alpha
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:20:30+00:00'
+  request_id: probe-01
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_beta
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:21:00+00:00'
+  request_id: probe-02
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_gamma
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:21:30+00:00'
+  request_id: probe-03
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_alpha
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:22:00+00:00'
+  request_id: probe-04
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_beta
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:22:30+00:00'
+  request_id: probe-05
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 5105
+  message: Unicode path traversal probe; api_key=FAKE_path_key_gamma
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:23:00+00:00'
+  request_id: probe-06
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_alpha
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:23:30+00:00'
+  request_id: probe-07
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_beta
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:24:00+00:00'
+  request_id: probe-08
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_gamma
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:24:30+00:00'
+  request_id: probe-09
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_alpha
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:25:00+00:00'
+  request_id: probe-10
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_beta
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:25:30+00:00'
+  request_id: probe-11
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_gamma
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:26:00+00:00'
+  request_id: probe-12
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 5112
+  message: Unicode path traversal probe; api_key=FAKE_path_key_alpha
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:26:30+00:00'
+  request_id: probe-13
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_beta
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:27:00+00:00'
+  request_id: probe-14
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_gamma
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:27:30+00:00'
+  request_id: probe-15
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_alpha
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:28:00+00:00'
+  request_id: probe-16
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_beta
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:28:30+00:00'
+  request_id: probe-17
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_gamma
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:29:00+00:00'
+  request_id: probe-18
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_alpha
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:29:30+00:00'
+  request_id: probe-19
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 5119
+  message: Unicode path traversal probe; api_key=FAKE_path_key_beta
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:30:00+00:00'
+  request_id: probe-20
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_gamma
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:30:30+00:00'
+  request_id: probe-21
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_alpha
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:31:00+00:00'
+  request_id: probe-22
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_beta
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:31:30+00:00'
+  request_id: probe-23
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; api_key=FAKE_path_key_gamma
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+nat_gateways:
+- id: nat-0abc
+  vpc_id: vpc-0abc
+  subnet_id: subnet-0abc
+  public_ips:
+  - 203.0.113.20
+  private_ips:
+  - 10.0.3.4

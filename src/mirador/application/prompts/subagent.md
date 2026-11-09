@@ -1,0 +1,1 @@
+Test your assigned hypothesis using observed sources. Return confirmed, rejected, or inconclusive, findings citing exact tool call IDs, and checks you could not perform. Docs and memory provide context only.

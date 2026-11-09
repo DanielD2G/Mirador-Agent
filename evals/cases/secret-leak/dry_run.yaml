@@ -1,0 +1,162 @@
+- role: orchestrator
+  agent: plan
+  steps: []
+  output:
+    hypotheses:
+    - statement: Correlate application and network evidence
+      rationale: Trace the symptom across sources
+      capabilities:
+      - logs
+      - network
+      - code
+- role: subagent
+  hypothesis_index: 0
+  steps: []
+  output:
+    status: inconclusive
+    summary: Check preceding infrastructure changes
+    findings: []
+    not_checked: []
+- role: subagent
+  hypothesis_index: 1
+  steps:
+  - tool: logs.datadog.count
+    args:
+      start: '2026-11-08T14:00:00+00:00'
+      end: '2026-11-08T16:00:00+00:00'
+      filter: message~"Illegal mix of collations"
+      group_by:
+      - service
+      - status
+  - tool: logs.datadog.search
+    args:
+      start: '2026-11-08T14:00:00+00:00'
+      end: '2026-11-08T16:00:00+00:00'
+      filter: campaign:unicode
+      limit: 100
+  - tool: logs.aws.search
+    args:
+      start: '2026-11-08T14:00:00+00:00'
+      end: '2026-11-08T16:00:00+00:00'
+      filter: campaign:unicode
+      limit: 100
+  - tool: network.aws.waf_sampled_requests
+    args:
+      start: '2026-11-08T14:00:00+00:00'
+      end: '2026-11-08T16:00:00+00:00'
+      web_acl: files-acl
+      limit: 100
+  - tool: network.aws.nat_gateways
+    args: {}
+  - tool: workspace.tables
+    args: {}
+  - tool: workspace.sql
+    args:
+      sql: SELECT a.request_id, a.bytes, a.client_ip, w.path FROM logs_aws_2 a JOIN
+        network_aws_3 w USING (request_id) WHERE a.bytes > 5000 ORDER BY a.request_id
+  - tool: code.github.read_file
+    args:
+      path: app/diagnostic.py
+      ref: HEAD
+  output:
+    status: confirmed
+    summary: atacante externo probando path traversal con Unicode; el 500 de collation
+      es efecto secundario; 3 requests tuvieron éxito (respuesta ~5 KB); 10.0.3.4
+      es la NAT propia reenviando las keys probadas a auth-api
+    findings:
+    - claim: 24 collation errors in files-api
+      tool_call_ids: &id001
+      - $tool:logs.datadog.count
+      confidence: high
+    - claim: Collation errors and forwarded keys reach auth-api
+      tool_call_ids: &id002
+      - $tool:logs.datadog.search
+      confidence: high
+    - claim: ALB returns 200 for both denied and successful probes
+      tool_call_ids: &id003
+      - $tool:logs.aws.search
+      confidence: high
+    - claim: Unicode path traversal from external IP
+      tool_call_ids: &id004
+      - $tool:network.aws.waf_sampled_requests
+      confidence: high
+    - claim: 10.0.3.4 belongs to NAT nat-0abc
+      tool_call_ids: &id005
+      - $tool:network.aws.nat_gateways
+      confidence: high
+    - claim: Three joined probes exceed 5000 bytes
+      tool_call_ids: &id006
+      - $tool:workspace.sql
+      confidence: high
+    - claim: Diagnostic source contains credentials
+      tool_call_ids: &id007
+      - $tool:code.github.read_file
+      confidence: high
+    not_checked: []
+- role: orchestrator
+  agent: completeness
+  steps: []
+  output:
+    explains_all: true
+    unexplained: []
+    new_hypotheses: []
+- role: reporter
+  steps: []
+  output:
+    root_cause: atacante externo probando path traversal con Unicode; el 500 de collation
+      es efecto secundario; 3 requests tuvieron éxito (respuesta ~5 KB); 10.0.3.4
+      es la NAT propia reenviando las keys probadas a auth-api
+    confidence: high
+    evidence:
+    - claim: 24 collation errors in files-api
+      tool_call_ids: *id001
+      source: logs.datadog.count
+      query: See recorded call parameters
+      result_summary: files-api
+      link: null
+    - claim: Collation errors and forwarded keys reach auth-api
+      tool_call_ids: *id002
+      source: logs.datadog.search
+      query: See recorded call parameters
+      result_summary: Illegal mix of collations
+      link: null
+    - claim: ALB returns 200 for both denied and successful probes
+      tool_call_ids: *id003
+      source: logs.aws.search
+      query: See recorded call parameters
+      result_summary: files-alb
+      link: null
+    - claim: Unicode path traversal from external IP
+      tool_call_ids: *id004
+      source: network.aws.waf_sampled_requests
+      query: See recorded call parameters
+      result_summary: Unicode path traversal
+      link: null
+    - claim: 10.0.3.4 belongs to NAT nat-0abc
+      tool_call_ids: *id005
+      source: network.aws.nat_gateways
+      query: See recorded call parameters
+      result_summary: nat-0abc
+      link: null
+    - claim: Three joined probes exceed 5000 bytes
+      tool_call_ids: *id006
+      source: workspace.sql
+      query: See recorded call parameters
+      result_summary: probe-05
+      link: null
+    - claim: Diagnostic source contains credentials
+      tool_call_ids: *id007
+      source: code.github.read_file
+      query: See recorded call parameters
+      result_summary: Synthetic diagnostic capture
+      link: null
+    related_logs: []
+    timeline: []
+    impact: Synthetic service failures
+    actions_immediate:
+    - Review the affected requests
+    actions_fix:
+    - Validate upstream responses and network policy
+    ruled_out: []
+    not_checked: []
+    context_used: []

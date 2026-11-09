@@ -1,0 +1,60 @@
+{"ts": "2026-11-08T14:00:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:01:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 82, "pool_limit": 100}
+{"ts": "2026-11-08T14:02:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 96, "pool_limit": 100}
+{"ts": "2026-11-08T14:03:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:04:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 88, "pool_limit": 100}
+{"ts": "2026-11-08T14:05:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 88, "pool_limit": 100}
+{"ts": "2026-11-08T14:06:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:07:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 87, "pool_limit": 100}
+{"ts": "2026-11-08T14:08:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 90, "pool_limit": 100}
+{"ts": "2026-11-08T14:09:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:10:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 96, "pool_limit": 100}
+{"ts": "2026-11-08T14:11:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 82, "pool_limit": 100}
+{"ts": "2026-11-08T14:12:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:13:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 98, "pool_limit": 100}
+{"ts": "2026-11-08T14:14:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 82, "pool_limit": 100}
+{"ts": "2026-11-08T14:15:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:16:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 98, "pool_limit": 100}
+{"ts": "2026-11-08T14:17:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 87, "pool_limit": 100}
+{"ts": "2026-11-08T14:18:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:19:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 96, "pool_limit": 100}
+{"ts": "2026-11-08T14:20:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 92, "pool_limit": 100}
+{"ts": "2026-11-08T14:21:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:22:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 82, "pool_limit": 100}
+{"ts": "2026-11-08T14:23:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 96, "pool_limit": 100}
+{"ts": "2026-11-08T14:24:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:25:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 84, "pool_limit": 100}
+{"ts": "2026-11-08T14:26:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 85, "pool_limit": 100}
+{"ts": "2026-11-08T14:27:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:28:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 86, "pool_limit": 100}
+{"ts": "2026-11-08T14:29:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 96, "pool_limit": 100}
+{"ts": "2026-11-08T14:30:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:31:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 85, "pool_limit": 100}
+{"ts": "2026-11-08T14:32:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 92, "pool_limit": 100}
+{"ts": "2026-11-08T14:33:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:34:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 80, "pool_limit": 100}
+{"ts": "2026-11-08T14:35:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 95, "pool_limit": 100}
+{"ts": "2026-11-08T14:36:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:37:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 98, "pool_limit": 100}
+{"ts": "2026-11-08T14:38:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 97, "pool_limit": 100}
+{"ts": "2026-11-08T14:39:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:40:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 83, "pool_limit": 100}
+{"ts": "2026-11-08T14:41:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 94, "pool_limit": 100}
+{"ts": "2026-11-08T14:42:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:43:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 88, "pool_limit": 100}
+{"ts": "2026-11-08T14:44:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 89, "pool_limit": 100}
+{"ts": "2026-11-08T14:45:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:46:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 95, "pool_limit": 100}
+{"ts": "2026-11-08T14:47:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 83, "pool_limit": 100}
+{"ts": "2026-11-08T14:48:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:49:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 81, "pool_limit": 100}
+{"ts": "2026-11-08T14:50:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 92, "pool_limit": 100}
+{"ts": "2026-11-08T14:51:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:52:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 82, "pool_limit": 100}
+{"ts": "2026-11-08T14:53:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 83, "pool_limit": 100}
+{"ts": "2026-11-08T14:54:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:55:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 98, "pool_limit": 100}
+{"ts": "2026-11-08T14:56:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 96, "pool_limit": 100}
+{"ts": "2026-11-08T14:57:00+00:00", "service": "checkout-api", "status": 502, "message": "payments-db connection pool exhausted", "replicas": 12, "pool_active": 100, "pool_limit": 100}
+{"ts": "2026-11-08T14:58:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 91, "pool_limit": 100}
+{"ts": "2026-11-08T14:59:00+00:00", "service": "checkout-api", "status": 200, "message": "Checkout OK", "replicas": 12, "pool_active": 89, "pool_limit": 100}

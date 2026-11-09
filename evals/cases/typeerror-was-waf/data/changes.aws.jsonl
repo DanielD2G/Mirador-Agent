@@ -1,0 +1,1 @@
+{"at": "2026-11-08T09:58:00+00:00", "source": "cloudtrail", "actor": "synthetic-waf-operator", "kind": "UpdateWebACL", "resource": "orders-acl", "summary": "UpdateWebACL added Challenge rule", "details": {"service": "orders-api", "rule": "service-challenge", "action": "Challenge"}, "link": null}

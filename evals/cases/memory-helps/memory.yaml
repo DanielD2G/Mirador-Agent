@@ -1,0 +1,18 @@
+- id: checkout-pool-12-days-ago
+  investigation_id: synthetic-prior-checkout
+  recorded_at: '2026-10-27T15:00:00+00:00'
+  services:
+  - checkout-api
+  - payments-db
+  symptom: checkout-api 502 intermitente
+  root_cause: 502 de checkout-api por agotamiento del pool de conexiones a payments-db
+    tras subir réplicas
+  confidence: high
+  evidence_summary:
+  - payments-db pool active=100 limit=100
+  fix:
+  - Reduce replicas and cap aggregate database connections
+  state: confirmed
+  facts:
+  - 502 de checkout-api por agotamiento del pool de conexiones a payments-db tras
+    subir réplicas

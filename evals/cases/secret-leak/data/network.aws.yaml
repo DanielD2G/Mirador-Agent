@@ -1,0 +1,297 @@
+sampled_requests:
+- ts: '2026-11-08T14:20:00+00:00'
+  request_id: probe-00
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; Bearer FAKE_bearer_0_not_a_credential
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:20:30+00:00'
+  request_id: probe-01
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; Bearer FAKE_bearer_1_not_a_credential
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:21:00+00:00'
+  request_id: probe-02
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; Bearer FAKE_bearer_2_not_a_credential
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:21:30+00:00'
+  request_id: probe-03
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; Bearer FAKE_bearer_3_not_a_credential
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:22:00+00:00'
+  request_id: probe-04
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; jwt=eyJFAKE0.eyJzeW50aGV0aWM0.FAKEsignature0
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:22:30+00:00'
+  request_id: probe-05
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 5105
+  message: Unicode path traversal probe; jwt=eyJFAKE1.eyJzeW50aGV0aWM1.FAKEsignature1
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:23:00+00:00'
+  request_id: probe-06
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; jwt=eyJFAKE2.eyJzeW50aGV0aWM2.FAKEsignature2
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:23:30+00:00'
+  request_id: probe-07
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; jwt=eyJFAKE3.eyJzeW50aGV0aWM3.FAKEsignature3
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:24:00+00:00'
+  request_id: probe-08
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; aws_access_key_id=AKIAEXAMPLE000000000
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:24:30+00:00'
+  request_id: probe-09
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; aws_access_key_id=AKIAEXAMPLE000000001
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:25:00+00:00'
+  request_id: probe-10
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; aws_access_key_id=AKIAEXAMPLE000000002
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:25:30+00:00'
+  request_id: probe-11
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; aws_access_key_id=AKIAEXAMPLE000000003
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:26:00+00:00'
+  request_id: probe-12
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 5112
+  message: Unicode path traversal probe; /download?key=FAKE_query_key_0
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:26:30+00:00'
+  request_id: probe-13
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; /download?key=FAKE_query_key_1
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:27:00+00:00'
+  request_id: probe-14
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; /download?key=FAKE_query_key_2
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:27:30+00:00'
+  request_id: probe-15
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; /download?key=FAKE_query_key_3
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:28:00+00:00'
+  request_id: probe-16
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; email=synthetic-0@example.invalid
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:28:30+00:00'
+  request_id: probe-17
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; email=synthetic-1@example.invalid
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:29:00+00:00'
+  request_id: probe-18
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; email=synthetic-2@example.invalid
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:29:30+00:00'
+  request_id: probe-19
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 5119
+  message: Unicode path traversal probe; email=synthetic-3@example.invalid
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:30:00+00:00'
+  request_id: probe-20
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; Bearer FAKE_bearer_0_not_a_credential
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:30:30+00:00'
+  request_id: probe-21
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; Bearer FAKE_bearer_1_not_a_credential
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:31:00+00:00'
+  request_id: probe-22
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; Bearer FAKE_bearer_2_not_a_credential
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+- ts: '2026-11-08T14:31:30+00:00'
+  request_id: probe-23
+  service: files-api
+  client_ip: 198.51.100.77
+  campaign: unicode
+  path: /files/．．/％２ｅ％２ｅ/credentials
+  status: 200
+  bytes: 180
+  message: Unicode path traversal probe; Bearer FAKE_bearer_3_not_a_credential
+  web_acl: files-acl
+  rule: unicode-monitor
+  action: ALLOW
+nat_gateways:
+- id: nat-0abc
+  vpc_id: vpc-0abc
+  subnet_id: subnet-0abc
+  public_ips:
+  - 203.0.113.20
+  private_ips:
+  - 10.0.3.4

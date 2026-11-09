@@ -1,0 +1,32 @@
+.venv/
+.mirador/
+mirador.yaml
+*.duckdb
+__pycache__/
+.mypy_cache/
+.ruff_cache/
+.import_linter_cache/
+
+evals/results/
+.superpowers/
+
+# Documentos internos de planificación (no se publican)
+REQUIREMENTS.md
+docs/superpowers/
+
+# Artefactos locales sensibles
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.duckdb.wal
+*.wal
+transcripts/
+dist/
+build/
+*.egg-info/

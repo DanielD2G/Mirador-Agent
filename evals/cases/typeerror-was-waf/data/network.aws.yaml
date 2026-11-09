@@ -1,0 +1,295 @@
+sampled_requests:
+- ts: '2026-11-08T10:05:00+00:00'
+  request_id: inventory-00
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:06:00+00:00'
+  request_id: inventory-01
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:07:00+00:00'
+  request_id: inventory-02
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:08:00+00:00'
+  request_id: inventory-03
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:09:00+00:00'
+  request_id: inventory-04
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:10:00+00:00'
+  request_id: inventory-05
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:11:00+00:00'
+  request_id: inventory-06
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:12:00+00:00'
+  request_id: inventory-07
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:13:00+00:00'
+  request_id: inventory-08
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:14:00+00:00'
+  request_id: inventory-09
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:15:00+00:00'
+  request_id: inventory-10
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:16:00+00:00'
+  request_id: inventory-11
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:17:00+00:00'
+  request_id: inventory-12
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:18:00+00:00'
+  request_id: inventory-13
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:19:00+00:00'
+  request_id: inventory-14
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:20:00+00:00'
+  request_id: inventory-15
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:21:00+00:00'
+  request_id: inventory-16
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:22:00+00:00'
+  request_id: inventory-17
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:23:00+00:00'
+  request_id: inventory-18
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:24:00+00:00'
+  request_id: inventory-19
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:25:00+00:00'
+  request_id: inventory-20
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:26:00+00:00'
+  request_id: inventory-21
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:27:00+00:00'
+  request_id: inventory-22
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+- ts: '2026-11-08T10:28:00+00:00'
+  request_id: inventory-23
+  service: inventory-api
+  web_acl: orders-acl
+  rule: service-challenge
+  action: CHALLENGE
+  status: 202
+  client_ip: 10.0.8.9
+  user_agent: inventory-api/2.1 service-client
+  path: /v1/inventory
+  content_type: text/html
+  message: WAF Challenge response
+waf_rules:
+  orders-acl:
+  - name: service-challenge
+    priority: 1
+    action: Challenge
+    statement_summary: Challenge service-client User-Agent

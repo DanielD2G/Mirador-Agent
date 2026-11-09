@@ -1,0 +1,54 @@
+models:
+  provider: openrouter            # único valor en el MVP
+  orchestrator: [<modelo>, <fallback>]
+  subagent: [<modelo>]
+  reporter: [<modelo>]
+  memory_extraction: <modelo>     # el que usa Graphiti
+  embeddings: <modelo>
+
+budgets:
+  per_investigation: { time: 10m, tool_calls: 80, usd: 1.00, tokens: 2000000 }
+  monthly_usd: 30
+  eval: { monthly_usd: 50, per_run_usd: 10 }
+
+investigation:
+  max_subagents: 4
+  changes_window: 6h
+
+targets:
+  aws:
+    - name: lab
+      profile: mirador-lab
+      region: us-east-1
+      log_groups: # Service names mapped to CloudWatch log groups; max 50 per query
+        api: [/mirador/api]
+
+providers:
+  datadog: { site: datadoghq.com }
+  grafana: { url: http://localhost:3000, loki_uid: null, prometheus_uid: null } # UID de las fuentes
+  github:
+    service_repos: {} # Maps service names to configured owner/repository names
+    repos: [org/servicio-a, org/servicio-b]
+
+docs:
+  path: ~/docs-equipo
+
+workspace:
+  inline_rows_threshold: 50     # búsquedas con menos filas van también completas al modelo
+  max_rows_returned: 200
+  query_timeout: 15s
+  memory_limit: 1GB
+  retention: 7d
+
+memory:
+  graphiti: { falkordb_url: redis://localhost:6379 }
+
+sensitive_tools:
+  aws.alb_access_logs: { enabled: false, bucket: "", prefix: "" }
+
+redaction:
+  extra_patterns: []
+
+# Shared calls/minute by catalog quota_group
+quotas:
+  datadog-logs: 60

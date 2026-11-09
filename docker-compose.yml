@@ -1,0 +1,9 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:v4.14.9@sha256:09e2aed73c1ac3b1c9c53e7e20f3ede4393180cb42f499ffa1b404e62c07d352
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - falkordb-data:/data
+volumes:
+  falkordb-data:

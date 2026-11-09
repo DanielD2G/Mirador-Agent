@@ -1,0 +1,56 @@
+- role: orchestrator
+  agent: plan
+  steps: []
+  output:
+    hypotheses:
+    - statement: Correlate application and network evidence
+      rationale: Trace the symptom across sources
+      capabilities:
+      - logs
+- role: subagent
+  hypothesis_index: 0
+  steps: []
+  output:
+    status: inconclusive
+    summary: Check preceding infrastructure changes
+    findings: []
+    not_checked: []
+- role: subagent
+  hypothesis_index: 1
+  steps:
+  - tool: logs.datadog.search
+    args:
+      start: '2026-11-08T14:00:00+00:00'
+      end: '2026-11-08T16:00:00+00:00'
+      filter: status:500
+      limit: 10
+  output:
+    status: inconclusive
+    summary: Synthetic lifecycle probe; diagnostic coverage is incomplete
+    findings: []
+    not_checked:
+    - 'datadog logs unavailable: provider authentication ToolError'
+- role: orchestrator
+  agent: completeness
+  steps: []
+  output:
+    explains_all: true
+    unexplained: []
+    new_hypotheses: []
+- role: reporter
+  steps: []
+  output:
+    root_cause: Synthetic lifecycle probe; diagnostic coverage is incomplete
+    confidence: high
+    evidence: []
+    related_logs: []
+    timeline: []
+    impact: Synthetic service failures
+    actions_immediate:
+    - Review the affected requests
+    actions_fix:
+    - Validate upstream responses and network policy
+    ruled_out: []
+    not_checked:
+    - 'datadog logs unavailable: provider authentication ToolError'
+    context_used: []

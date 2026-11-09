@@ -1,0 +1,30 @@
+name: typeerror-was-waf
+trigger:
+  kind: alert
+  text: 'orders-api TypeError: ''NoneType'' object is not subscriptable since 10:05
+    UTC.'
+  now: '2026-11-08T11:00:00+00:00'
+providers:
+  logs:
+  - datadog
+  changes:
+  - aws
+  network:
+  - aws
+  code:
+  - github
+expected:
+  root_cause: WAF UpdateWebACL added a Challenge rule at 09:58; inventory-api service
+    calls receive 202 CHALLENGE instead of JSON, causing orders-api TypeError from
+    10:05 in the inventory client that assumes JSON.
+  must_mention:
+  - waf
+  - challenge
+  must_not_conclude: []
+  min_confidence: medium
+secrets: []
+budget:
+  usd: 1.0
+  tool_calls: 80
+  time: 10m
+auth_error_providers: []

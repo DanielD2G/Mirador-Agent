@@ -1,0 +1,19 @@
+name: budget-exhausted
+trigger:
+  kind: alert
+  text: Investigate synthetic lifecycle-api failures
+  now: '2026-11-08T16:00:00+00:00'
+providers:
+  logs:
+  - datadog
+expected:
+  root_cause: Synthetic lifecycle probe; diagnostic coverage is incomplete
+  must_mention: []
+  must_not_conclude: []
+  min_confidence: medium
+secrets: []
+budget:
+  usd: 1.0
+  tool_calls: 5
+  time: 10m
+auth_error_providers: []

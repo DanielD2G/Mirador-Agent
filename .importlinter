@@ -1,0 +1,52 @@
+[importlinter]
+root_package = mirador
+include_external_packages = True
+
+[importlinter:contract:layers]
+name = layers
+type = layers
+layers =
+    mirador.bootstrap
+    mirador.adapters
+    mirador.application : mirador.redaction
+    mirador.domain
+
+[importlinter:contract:domain-forbidden]
+name = domain forbidden
+type = forbidden
+source_modules = mirador.domain
+forbidden_modules =
+    openai
+    agents
+    duckdb
+    graphiti_core
+    aioboto3
+    httpx
+    aiosqlite
+
+[importlinter:contract:application-forbidden]
+name = application forbidden
+type = forbidden
+source_modules = mirador.application
+forbidden_modules =
+    openai
+    agents
+    duckdb
+    graphiti_core
+    aioboto3
+    httpx
+    aiosqlite
+    mirador.adapters
+
+[importlinter:contract:independence]
+name = independence
+type = independence
+modules =
+    mirador.adapters.cli
+    mirador.adapters.agents
+    mirador.adapters.providers
+    mirador.adapters.workspace
+    mirador.adapters.memory
+    mirador.adapters.store
+    mirador.adapters.events
+    mirador.adapters.eval

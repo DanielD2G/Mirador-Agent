@@ -1,0 +1,24 @@
+name: nightly-noise
+trigger:
+  kind: alert
+  text: payments-api latency increased at 15:00 UTC
+  now: '2026-11-08T16:00:00+00:00'
+providers:
+  logs:
+  - datadog
+  changes:
+  - github
+expected:
+  root_cause: payments-api latency increased after the GitHub deploy at 15:00; the
+    new release doubled database queries per request.
+  must_mention:
+  - deploy
+  must_not_conclude:
+  - cron-cleanup
+  min_confidence: medium
+secrets: []
+budget:
+  usd: 1.0
+  tool_calls: 80
+  time: 10m
+auth_error_providers: []

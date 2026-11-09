@@ -1,0 +1,146 @@
+- role: orchestrator
+  agent: plan
+  steps: []
+  output:
+    hypotheses:
+    - statement: Correlate application and network evidence
+      rationale: Trace the symptom across sources
+      capabilities:
+      - logs
+      - network
+      - code
+- role: subagent
+  hypothesis_index: 0
+  steps:
+  - tool: changes.aws.recent
+    args:
+      start: '2026-11-08T09:00:00+00:00'
+      end: '2026-11-08T11:00:00+00:00'
+      service: orders-api
+      limit: 20
+  output:
+    status: confirmed
+    summary: Check preceding infrastructure changes
+    findings:
+    - claim: UpdateWebACL added Challenge at 09:58
+      tool_call_ids: &id001
+      - $tool:changes.aws.recent
+      confidence: high
+    not_checked: []
+- role: subagent
+  hypothesis_index: 1
+  steps:
+  - tool: logs.datadog.count
+    args:
+      start: '2026-11-08T09:00:00+00:00'
+      end: '2026-11-08T11:00:00+00:00'
+      filter: status:500
+      group_by:
+      - service
+  - tool: logs.datadog.search
+    args:
+      start: '2026-11-08T09:00:00+00:00'
+      end: '2026-11-08T11:00:00+00:00'
+      filter: status:500
+      limit: 100
+  - tool: network.aws.waf_sampled_requests
+    args:
+      start: '2026-11-08T09:00:00+00:00'
+      end: '2026-11-08T11:00:00+00:00'
+      web_acl: orders-acl
+      limit: 100
+  - tool: network.aws.waf_rules
+    args:
+      web_acl: orders-acl
+  - tool: code.github.read_file
+    args:
+      path: app/clients/inventory.py
+      ref: HEAD
+  output:
+    status: confirmed
+    summary: WAF UpdateWebACL added a Challenge rule at 09:58; inventory-api service
+      calls receive 202 CHALLENGE instead of JSON, causing orders-api TypeError from
+      10:05 in the inventory client that assumes JSON.
+    findings:
+    - claim: 24 orders-api failures
+      tool_call_ids: &id002
+      - $tool:logs.datadog.count
+      confidence: high
+    - claim: TypeError follows upstream 202 response
+      tool_call_ids: &id003
+      - $tool:logs.datadog.search
+      confidence: high
+    - claim: WAF CHALLENGE intercepts inventory-api
+      tool_call_ids: &id004
+      - $tool:network.aws.waf_sampled_requests
+      confidence: high
+    - claim: Challenge rule matches service clients
+      tool_call_ids: &id005
+      - $tool:network.aws.waf_rules
+      confidence: high
+    - claim: Inventory client assumes JSON items
+      tool_call_ids: &id006
+      - $tool:code.github.read_file
+      confidence: high
+    not_checked: []
+- role: orchestrator
+  agent: completeness
+  steps: []
+  output:
+    explains_all: true
+    unexplained: []
+    new_hypotheses: []
+- role: reporter
+  steps: []
+  output:
+    root_cause: WAF UpdateWebACL added a Challenge rule at 09:58; inventory-api service
+      calls receive 202 CHALLENGE instead of JSON, causing orders-api TypeError from
+      10:05 in the inventory client that assumes JSON.
+    confidence: high
+    evidence:
+    - claim: UpdateWebACL added Challenge at 09:58
+      tool_call_ids: *id001
+      source: changes.aws.recent
+      query: See recorded call parameters
+      result_summary: UpdateWebACL added Challenge rule
+      link: null
+    - claim: 24 orders-api failures
+      tool_call_ids: *id002
+      source: logs.datadog.count
+      query: See recorded call parameters
+      result_summary: orders-api
+      link: null
+    - claim: TypeError follows upstream 202 response
+      tool_call_ids: *id003
+      source: logs.datadog.search
+      query: See recorded call parameters
+      result_summary: TypeError
+      link: null
+    - claim: WAF CHALLENGE intercepts inventory-api
+      tool_call_ids: *id004
+      source: network.aws.waf_sampled_requests
+      query: See recorded call parameters
+      result_summary: CHALLENGE
+      link: null
+    - claim: Challenge rule matches service clients
+      tool_call_ids: *id005
+      source: network.aws.waf_rules
+      query: See recorded call parameters
+      result_summary: Challenge
+      link: null
+    - claim: Inventory client assumes JSON items
+      tool_call_ids: *id006
+      source: code.github.read_file
+      query: See recorded call parameters
+      result_summary: response.json
+      link: null
+    related_logs: []
+    timeline: []
+    impact: Synthetic service failures
+    actions_immediate:
+    - Review the affected requests
+    actions_fix:
+    - Validate upstream responses and network policy
+    ruled_out: []
+    not_checked: []
+    context_used: []
